@@ -8,13 +8,6 @@ namespace HwBuddy.Bots
     {
         public void Step()
         {
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            if (HaveNewCards())
-            {
-                ImageService.DoMouseClick();
-                return;
-            }
             if (BattleReady())
             {
                 ImageService.DoMouseClick();
@@ -27,19 +20,6 @@ namespace HwBuddy.Bots
                     ImageService.DoMouseClick();
                     return;
                 }
-            }
-            if(Victory())
-            {
-                if (OkButton())
-                {
-                    ImageService.DoMouseClick();
-                    return;
-                }
-            }
-            if(CanCollectCards())
-            {
-                ImageService.DoMouseClick();
-                return;
             }
             if (CanUseCards())
             {
@@ -54,8 +34,15 @@ namespace HwBuddy.Bots
             if (CanAttackManually())
             {
                 ImageService.DoMouseClick();
-                sw.Stop();
                 return;
+            }
+            if (Victory())
+            {
+                if (OkButton())
+                {
+                    ImageService.DoMouseClick();
+                    return;
+                }
             }
         }
 

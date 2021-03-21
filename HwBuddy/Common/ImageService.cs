@@ -50,7 +50,7 @@ namespace HwBuddy.Common
 
         public static void DoMouseClick()
         {
-            //mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+            mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
         }
 
         public static bool CheckImagePresent(Image<Bgr, byte> image)

@@ -2,6 +2,7 @@
 using HwBuddy.Core;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace HwBuddy.Bots
@@ -15,6 +16,8 @@ namespace HwBuddy.Bots
 
         public void Step()
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
             if (ToggleButton())
             {
                 ImageService.DoMouseClick();
@@ -92,7 +95,8 @@ namespace HwBuddy.Bots
             {
                 ImageService.DoMouseClick();
                 return;
-            }            
+            }
+            sw.Stop();
         }
 
         bool TowerHall()
