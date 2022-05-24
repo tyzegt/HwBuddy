@@ -7,14 +7,13 @@ using System.Text;
 
 namespace HwBuddy.Bots
 {
-    public class TowerBot
+    public class TowerBot : BaseBot
     {
-        bool SkullsEnded = false;
-        bool BigChecked = false;
-        bool MidChecked = false;
-        bool SmallChecked = false;
+        public TowerBot(MainForm mainForm) : base(mainForm)
+        {
+        }
 
-        public void Step()
+        public override void Step()
         {
             Stopwatch sw = new Stopwatch();
             sw.Start();
@@ -35,10 +34,6 @@ namespace HwBuddy.Bots
             }
             if (Shrine())
             {
-                SkullsEnded = false;
-                BigChecked = false;
-                MidChecked = false;
-                SmallChecked = false;
                 ImageService.DoMouseClick();
                 return;
             }
@@ -47,12 +42,6 @@ namespace HwBuddy.Bots
                 ImageService.DoMouseClick();
                 return;
             }
-            if (BadPowerup())
-            {
-                ImageService.DoMouseClick();
-                return;
-            }
-
             if (CanRaid())
             {
                 ImageService.DoMouseClick();
@@ -141,7 +130,7 @@ namespace HwBuddy.Bots
 
         bool OpenChest()
         {
-            return ImageService.CursorToImage(Images.TOWER_CHEST_OPEN);
+            return ImageService.CursorToImage(Images.TOWER_CHEST_OPEN, 0.9f);
         }
 
         bool Chest()
@@ -163,52 +152,7 @@ namespace HwBuddy.Bots
 
         bool Powerups()
         {
-            if (!MainForm.CollectPowerups)
-                return ImageService.CheckImagePresent(Images.TOWER_POWERUP_SCREEN) && ImageService.CursorToImage(Images.TOWER_POWERUP_CLOSE);
-
-
-            if (ImageService.CheckImagePresent(Images.TOWER_SKULLS_ENDED))
-            {
-                SkullsEnded = true;
-                return ImageService.CursorToImage(Images.SKULLS_OK_BUTTON);
-            }
-
-            bool button = false;
-
-            if(!BigChecked)
-            {
-                button = ImageService.CursorToImage(Images.TOWER_POWERUP_40);
-                if (!button) button = ImageService.CursorToImage(Images.TOWER_POWERUP_20);
-                if (button && !BigChecked) 
-                {
-                    BigChecked = true;
-                    return button; 
-                }
-            }
-            if (!MidChecked)
-            {
-                button = ImageService.CursorToImage(Images.TOWER_POWERUP_16);
-                if (!button) button = ImageService.CursorToImage(Images.TOWER_POWERUP_8);
-                if (button && !MidChecked)
-                {
-                    MidChecked = true;
-                    return button;
-                }
-            }
-            if (!SmallChecked)
-            {
-                button = ImageService.CursorToImage(Images.TOWER_POWERUP_3);
-                if (!button) button = ImageService.CursorToImage(Images.TOWER_POWERUP_6);
-                if (button && !SmallChecked)
-                {
-                    SmallChecked = true;
-                    return button;
-                }
-            }
-
-            if(BigChecked && MidChecked && SmallChecked)
-                return ImageService.CheckImagePresent(Images.TOWER_POWERUP_SCREEN) && ImageService.CursorToImage(Images.TOWER_POWERUP_CLOSE);
-            return false;
+            return ImageService.CheckImagePresent(Images.TOWER_POWERUP_SCREEN) && ImageService.CursorToImage(Images.TOWER_POWERUP_CLOSE);
         }
 
         bool Shrine()
@@ -223,7 +167,7 @@ namespace HwBuddy.Bots
 
         bool CanAttack()
         {
-            return ImageService.CursorToImage(Images.TOWER_DOOR);
+            return ImageService.CursorToImage(Images.TOWER_DOOR, 0.8f);
         }
     }
 }

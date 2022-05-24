@@ -8,7 +8,6 @@ namespace HwBuddy.Common
 {
     public static class Images
     {
-        public static string SCREEN = "Images/screen.png";
         public static Image<Bgr, byte> TOWER = new Image<Bgr, byte>("Images/tower.png");
         public static Image<Bgr, byte> GUILD = new Image<Bgr, byte>("Images/guild.png");
         public static Image<Bgr, byte> VICTORY = new Image<Bgr, byte>("Images/victory.png");

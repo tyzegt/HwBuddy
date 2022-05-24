@@ -1,12 +1,18 @@
-﻿using HwBuddy.Common;
+﻿using HwBuddy.Actions.Dungeon;
+using HwBuddy.Common;
 using HwBuddy.Core;
 using System.Diagnostics;
 
 namespace HwBuddy.Bots
 {
-    public class DungeonBot
+    public class DungeonBot : BaseBot
     {
-        public void Step()
+        public DungeonBot(MainForm mainForm) : base(mainForm)
+        {
+            var s = new DungeonBattleReadyStep();
+        }
+
+        public override void Step()
         {
             if (BattleReady())
             {

@@ -25,14 +25,15 @@ namespace HwBuddy
 
         const int ESC_HOTKEY_ID = 1;
 
-        BotType botType;
-        BotStep step = BotStep.Tower;
-        DungeonBot dunBot = new DungeonBot();
-        TowerBot towerBot = new TowerBot();
-        RaidBot raidBot = new RaidBot();
+        BaseBot currentBot;
+        BaseBot dunBot;
+        BaseBot towerBot;
+        BaseBot raidBot;
 
         public static Point Position;
         public static bool CollectPowerups;
+
+        Stopwatch stopwatch = new Stopwatch();
 
         public MainForm()
         {
@@ -44,6 +45,10 @@ namespace HwBuddy
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
+
+            dunBot = new DungeonBot(this);
+            towerBot = new TowerBot(this);
+            raidBot = new RaidBot(this);
         }
 
         protected override void WndProc(ref Message m)
@@ -56,33 +61,56 @@ namespace HwBuddy
             base.WndProc(ref m);
         }
 
-        private void testButton_Click(object sender, EventArgs e)
+
+        #region Bots
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            
+            if (currentBot == null) return;
+            stopwatch.Restart();
+            currentBot.Step();
+            stopwatch.Stop();
+
+            Log(stopwatch.Elapsed.ToString());
         }
 
-        
+        void Log(string message)
+        {
+            var lines = textBoxLog.Lines.ToList();
+            lines.Reverse();
+            if (lines.Count > 100) lines.RemoveAt(0);
+            lines.Add(message);
+            lines.Reverse();
+            textBoxLog.Lines = lines.ToArray();
+        }
 
         private void towerButton_Click(object sender, EventArgs e)
         {
-            botType = BotType.Tower;
+            currentBot = towerBot;
             timer1.Enabled = true;
         }
 
         private void dungeonButton_Click(object sender, EventArgs e)
         {
-            botType = BotType.Dungeon;
+            currentBot = dunBot;
             timer1.Enabled = true;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void raidButton_Click(object sender, EventArgs e)
         {
-            if (botType == BotType.Dungeon)
-                dunBot.Step();
-            if (botType == BotType.Tower)
-                towerBot.Step();
-            if (botType == BotType.Raid)
-                raidBot.Step();
+            currentBot = raidBot;
+            currentBot.Reset();
+            timer1.Enabled = true;
+        }
+
+        #endregion
+
+        #region FormControls
+
+
+        private void testButton_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -110,13 +138,7 @@ namespace HwBuddy
             //ImageService.CheckImagePresent(Images.DUNGEON_TO_BATTLE);
         }
 
-        private void raidButton_Click(object sender, EventArgs e)
-        {
-            botType = BotType.Raid;
-            raidBot.Reset();
-            //timer1.Interval = 50;
-            timer1.Enabled = true;
-        }
+
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -132,27 +154,7 @@ namespace HwBuddy
         {
             Process.Start(new ProcessStartInfo("https://hw-buddy.ru") { UseShellExecute = true });
         }
-    }
 
-    public enum BotStep
-    {
-        Tower,
-        CheckFloor,
-        TowerDoor,
-        TowerChest,
-        TowerRaid,
-        SelectPower,
-        NextFloor,
-        ChestSelect,
-        TowerChestMoveon,
-        TowerShrine,
-        TowerChestOpen
-    }
-
-    public enum BotType
-    {
-        Tower,
-        Dungeon,
-        Raid
+        #endregion
     }
 }

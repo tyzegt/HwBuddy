@@ -7,18 +7,22 @@ using System.Threading;
 
 namespace HwBuddy.Bots
 {
-    public class RaidBot
+    public class RaidBot : BaseBot
     {
         Point raid;
         Point take;
 
-        public void Reset()
+        public RaidBot(MainForm mainForm) : base(mainForm)
+        {
+        }
+
+        public override void Reset()
         {
             raid = new Point();
             take = new Point();
         }
 
-        public void Step()
+        public override void Step()
         {
             if(raid != Point.Empty && take != Point.Empty)
             {
