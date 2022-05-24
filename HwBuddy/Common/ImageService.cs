@@ -76,6 +76,22 @@ namespace HwBuddy.Common
             return false;
         }
 
+        public static Point FindImage(Image<Bgr, byte> image, double accuracy, int offsetX, int offsetY)
+        {
+            CaptureScreen();
+            var result = Recognizer.FindImageCoordinates(image, Images.SCREEN, accuracy);
+            if (result != Point.Empty)
+            {
+                return new Point(result.X + MainForm.Position.X + offsetX, result.Y + MainForm.Position.Y + offsetY);
+            }
+            return new Point();
+        }
+
+        public static void CursorToPoint(Point point)
+        {
+            Cursor.Position = point;
+        }
+
         public static bool CursorToImage(Image<Bgr, byte> image)
         {
             return CursorToImage(image, 0.9, 0, 0);

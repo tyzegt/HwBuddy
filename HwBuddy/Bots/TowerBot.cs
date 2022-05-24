@@ -162,7 +162,11 @@ namespace HwBuddy.Bots
         }
 
         bool Powerups()
-        {            
+        {
+            if (!MainForm.CollectPowerups)
+                return ImageService.CheckImagePresent(Images.TOWER_POWERUP_SCREEN) && ImageService.CursorToImage(Images.TOWER_POWERUP_CLOSE);
+
+
             if (ImageService.CheckImagePresent(Images.TOWER_SKULLS_ENDED))
             {
                 SkullsEnded = true;

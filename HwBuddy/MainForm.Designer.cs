@@ -30,16 +30,20 @@ namespace HwBuddy
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.towerButton = new System.Windows.Forms.Button();
             this.dungeonButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.raidButton = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // timer1
             // 
-            this.timer1.Interval = 200;
+            this.timer1.Interval = 700;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // towerButton
@@ -73,25 +77,63 @@ namespace HwBuddy
     "ню и нажми соответствующую кнопку. Чтобы остановить бота, нажми esc.";
             this.label1.Move += new System.EventHandler(this.label1_Move);
             // 
-            // button1
+            // raidButton
             // 
-            this.button1.Location = new System.Drawing.Point(939, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.raidButton.Location = new System.Drawing.Point(218, 27);
+            this.raidButton.Name = "raidButton";
+            this.raidButton.Size = new System.Drawing.Size(97, 23);
+            this.raidButton.TabIndex = 5;
+            this.raidButton.Text = "Рейдить";
+            this.raidButton.UseVisualStyleBackColor = true;
+            this.raidButton.Click += new System.EventHandler(this.raidButton_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(777, 57);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(237, 15);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Следи за обновлениями на hwbuddy.com";
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(12, 56);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(79, 19);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Усиления";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(941, 9);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(73, 15);
+            this.linkLabel2.TabIndex = 7;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Инструкция";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 56);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1026, 81);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.raidButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dungeonButton);
             this.Controls.Add(this.towerButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "HW Buddy";
             this.TopMost = true;
@@ -108,7 +150,10 @@ namespace HwBuddy
         private System.Windows.Forms.Button towerButton;
         private System.Windows.Forms.Button dungeonButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button raidButton;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }
 

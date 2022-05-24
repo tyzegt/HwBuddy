@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>hw buddy.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +12,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Images\checkout.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Images\close-button.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\donate.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Images\dungeon-attack-button.png">
