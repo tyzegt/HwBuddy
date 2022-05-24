@@ -12,10 +12,6 @@ namespace HwBuddy.Bots
         Point raid;
         Point take;
 
-        public RaidBot(MainForm mainForm) : base(mainForm)
-        {
-        }
-
         public override void Reset()
         {
             raid = new Point();

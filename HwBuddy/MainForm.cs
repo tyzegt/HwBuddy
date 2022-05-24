@@ -31,9 +31,9 @@ namespace HwBuddy
         BaseBot raidBot;
 
         public static Point Position;
-        public static bool CollectPowerups;
+        //public static bool CollectPowerups;
 
-        Stopwatch stopwatch = new Stopwatch();
+        //Stopwatch stopwatch = new Stopwatch();
 
         public MainForm()
         {
@@ -46,9 +46,9 @@ namespace HwBuddy
             MaximizeBox = false;
             MinimizeBox = false;
 
-            dunBot = new DungeonBot(this);
-            towerBot = new TowerBot(this);
-            raidBot = new RaidBot(this);
+            dunBot = new DungeonBot();
+            towerBot = new TowerBot();
+            raidBot = new RaidBot();
         }
 
         protected override void WndProc(ref Message m)
@@ -56,7 +56,6 @@ namespace HwBuddy
             if (m.Msg == 0x0312 && m.WParam.ToInt32() == ESC_HOTKEY_ID)
             {
                 timer1.Enabled = false;
-                //timer1.Interval = 700;
             }
             base.WndProc(ref m);
         }
@@ -67,21 +66,7 @@ namespace HwBuddy
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (currentBot == null) return;
-            stopwatch.Restart();
             currentBot.Step();
-            stopwatch.Stop();
-
-            Log(stopwatch.Elapsed.ToString());
-        }
-
-        void Log(string message)
-        {
-            var lines = textBoxLog.Lines.ToList();
-            lines.Reverse();
-            if (lines.Count > 100) lines.RemoveAt(0);
-            lines.Add(message);
-            lines.Reverse();
-            textBoxLog.Lines = lines.ToArray();
         }
 
         private void towerButton_Click(object sender, EventArgs e)
@@ -107,47 +92,14 @@ namespace HwBuddy
 
         #region FormControls
 
-
-        private void testButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Move(object sender, EventArgs e)
-        {
-
-        }
-
         private void MainForm_Move(object sender, EventArgs e)
         {
             Position = new Point(Location.X, Location.Y + Height);
         }
 
-        private void MainForm_DragDrop(object sender, DragEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //ImageService.CheckImagePresent(Images.DUNGEON_TO_BATTLE);
-        }
-
-
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://hw-buddy.ru") { UseShellExecute = true });
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            CollectPowerups = checkBox1.Checked;
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

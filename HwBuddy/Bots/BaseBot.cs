@@ -6,12 +6,6 @@ namespace HwBuddy.Bots
 {
     public class BaseBot
     {
-        MainForm _mainForm;
-        public BaseBot(MainForm mainForm)
-        {
-            _mainForm = mainForm;
-        }
-
         public virtual void Reset()
         {
         }

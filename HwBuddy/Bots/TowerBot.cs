@@ -9,10 +9,6 @@ namespace HwBuddy.Bots
 {
     public class TowerBot : BaseBot
     {
-        public TowerBot(MainForm mainForm) : base(mainForm)
-        {
-        }
-
         public override void Step()
         {
             Stopwatch sw = new Stopwatch();

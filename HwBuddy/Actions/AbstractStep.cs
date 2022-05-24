@@ -10,20 +10,21 @@ namespace HwBuddy.Actions
     public abstract class AbstractStep
     {
         public Image<Bgr, byte> _image;
+        float _accuracy;
+        int _offsetX;
+        int _offsetY;
 
-        public AbstractStep(Image<Bgr, byte> image)
+        public AbstractStep(Image<Bgr, byte> image, float accuracy = 0.9f, int offsetX = 0, int offsetY = 0)
         {
             _image = image;
+            _accuracy = accuracy;
+            _offsetX = offsetX;
+            _offsetY = offsetY;
         }
 
-        public void Click()
+        public virtual bool IsFound()
         {
-            ImageService.DoMouseClick();
-        }
-
-        public bool IsFound()
-        {
-            return ImageService.CursorToImage(Images.DUNGEON_TO_BATTLE);
+            return ImageService.CursorToImage(_image, _accuracy, _offsetX, _offsetY);
         }
     }
 }

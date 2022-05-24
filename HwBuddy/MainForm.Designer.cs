@@ -37,9 +37,7 @@ namespace HwBuddy
             this.label1 = new System.Windows.Forms.Label();
             this.raidButton = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.textBoxLog = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // timer1
@@ -76,7 +74,6 @@ namespace HwBuddy
             this.label1.TabIndex = 3;
             this.label1.Text = "Размести окно бота так, чтобы игра была ровно под ним. Войди в подземелье или баш" +
     "ню и нажми соответствующую кнопку. Чтобы остановить бота, нажми esc.";
-            this.label1.Move += new System.EventHandler(this.label1_Move);
             // 
             // raidButton
             // 
@@ -91,7 +88,7 @@ namespace HwBuddy
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(777, 57);
+            this.linkLabel1.Location = new System.Drawing.Point(777, 31);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(237, 15);
             this.linkLabel1.TabIndex = 6;
@@ -99,17 +96,6 @@ namespace HwBuddy
             this.linkLabel1.Text = "Следи за обновлениями на hwbuddy.com";
             this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 56);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(79, 19);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Усиления";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // linkLabel2
             // 
@@ -122,21 +108,11 @@ namespace HwBuddy
             this.linkLabel2.Text = "Инструкция";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // textBoxLog
-            // 
-            this.textBoxLog.Location = new System.Drawing.Point(321, 27);
-            this.textBoxLog.Multiline = true;
-            this.textBoxLog.Name = "textBoxLog";
-            this.textBoxLog.Size = new System.Drawing.Size(450, 48);
-            this.textBoxLog.TabIndex = 9;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 81);
-            this.Controls.Add(this.textBoxLog);
-            this.Controls.Add(this.checkBox1);
+            this.ClientSize = new System.Drawing.Size(1026, 60);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.raidButton);
@@ -147,8 +123,6 @@ namespace HwBuddy
             this.Name = "MainForm";
             this.Text = "HW Buddy";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.MainForm_Load);
-            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
             this.Move += new System.EventHandler(this.MainForm_Move);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,9 +136,7 @@ namespace HwBuddy
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button raidButton;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.TextBox textBoxLog;
     }
 }
 
