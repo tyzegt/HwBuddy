@@ -1,4 +1,5 @@
 ﻿using HwBuddy.Bots;
+using HwBuddy.Bots.Base;
 using HwBuddy.Common;
 using HwBuddy.Core;
 using System;
@@ -22,19 +23,12 @@ namespace HwBuddy
         public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
         [DllImport("user32.dll")]
         public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+        public static Point Position;
 
         const int ESC_HOTKEY_ID = 1;
 
-        BaseBot currentBot; // todo: Create bot factory
-        BaseBot dunBot;
-        BaseBot towerBot;
-        BaseBot raidBot;
-        BaseBot tournamentBot;
+        BaseBot currentBot; 
 
-        public static Point Position;
-        //public static bool CollectPowerups;
-
-        //Stopwatch stopwatch = new Stopwatch();
 
         public MainForm()
         {
@@ -46,11 +40,6 @@ namespace HwBuddy
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-
-            dunBot = new DungeonBot();
-            towerBot = new TowerBot();
-            raidBot = new RaidBot();
-            tournamentBot = new TournamentOfElementsBot();
         }
 
         protected override void WndProc(ref Message m)
@@ -62,7 +51,6 @@ namespace HwBuddy
             base.WndProc(ref m);
         }
 
-
         #region Bots
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -73,26 +61,26 @@ namespace HwBuddy
 
         private void towerButton_Click(object sender, EventArgs e)
         {
-            currentBot = towerBot;
+            currentBot = BotFactory.GetTowerBot();
             timer1.Enabled = true;
         }
 
         private void dungeonButton_Click(object sender, EventArgs e)
         {
-            currentBot = dunBot;
+            currentBot = BotFactory.GetDungeonBot();
             timer1.Enabled = true;
         }
 
         private void raidButton_Click(object sender, EventArgs e)
         {
-            currentBot = raidBot;
+            currentBot = BotFactory.GetRaidBot();
             currentBot.Reset();
             timer1.Enabled = true;
         }
 
         private void ToeButton_Click(object sender, EventArgs e)
         {
-            currentBot = tournamentBot;
+            currentBot = BotFactory.GetToeBot();
             timer1.Enabled = true;
         }
 

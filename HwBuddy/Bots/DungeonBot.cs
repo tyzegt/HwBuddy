@@ -1,4 +1,5 @@
 ﻿using HwBuddy.Actions;
+using HwBuddy.Bots.Base;
 using HwBuddy.Actions.Dungeon;
 using HwBuddy.Actions.Shared;
 using HwBuddy.Common;

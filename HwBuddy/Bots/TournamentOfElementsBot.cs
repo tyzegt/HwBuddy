@@ -1,4 +1,5 @@
 ﻿using HwBuddy.Actions;
+using HwBuddy.Bots.Base;
 using HwBuddy.Common;
 using System;
 using System.Collections.Generic;

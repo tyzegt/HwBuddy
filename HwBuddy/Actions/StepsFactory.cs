@@ -9,28 +9,38 @@ namespace HwBuddy.Actions
 {
     public static class StepsFactory
     {
-        public static List<AbstractStep> GetDungeonSteps() // todo: singletonize
+        static List<AbstractStep> dungeonSteps = null;
+        static List<AbstractStep> toeSteps = null;
+
+
+        public static List<AbstractStep> GetDungeonSteps()
         {
-            List<AbstractStep> steps = new List<AbstractStep>();
-            steps.Add(new DungeonBattleReadyStep());
-            steps.Add(new DungeonUseCardStep());
-            steps.Add(new DungeonDoorStep());
-            steps.Add(new InBattleStep());
-            steps.Add(new DungeonAttackStep());
-            steps.Add(new DungeonVictoryStep());
-            return steps;
+            if (dungeonSteps == null)
+            {
+                dungeonSteps = new List<AbstractStep>();
+                dungeonSteps.Add(new DungeonBattleReadyStep());
+                dungeonSteps.Add(new DungeonUseCardStep());
+                dungeonSteps.Add(new DungeonDoorStep());
+                dungeonSteps.Add(new InBattleStep());
+                dungeonSteps.Add(new DungeonAttackStep());
+                dungeonSteps.Add(new DungeonVictoryStep());
+            }
+            return dungeonSteps;
         }
 
-        public static List<AbstractStep> GetToeSteps() // todo: singletonize
+        public static List<AbstractStep> GetToeSteps()
         {
-            List<AbstractStep> steps = new List<AbstractStep>();
-            steps.Add(new ToeRaidStep());
-            steps.Add(new ToeCollectStep());
-            steps.Add(new ToeCloseStep());
-            steps.Add(new ToeChestStep());
-            steps.Add(new ToeCollectAllStep());
-            steps.Add(new ToeCollect2Step());
-            return steps;
+            if (toeSteps == null)
+            {
+                toeSteps = new List<AbstractStep>();
+                toeSteps.Add(new ToeRaidStep());
+                toeSteps.Add(new ToeCollectStep());
+                toeSteps.Add(new ToeCloseStep());
+                toeSteps.Add(new ToeChestStep());
+                toeSteps.Add(new ToeCollectAllStep());
+                toeSteps.Add(new ToeCollect2Step());
+            }
+            return toeSteps;
         }
     }
 }
