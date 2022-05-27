@@ -38,6 +38,7 @@ namespace HwBuddy
             this.raidButton = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.ToeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer1
@@ -49,7 +50,7 @@ namespace HwBuddy
             // 
             this.towerButton.Location = new System.Drawing.Point(12, 27);
             this.towerButton.Name = "towerButton";
-            this.towerButton.Size = new System.Drawing.Size(97, 23);
+            this.towerButton.Size = new System.Drawing.Size(58, 23);
             this.towerButton.TabIndex = 1;
             this.towerButton.Text = "Башня";
             this.towerButton.UseVisualStyleBackColor = true;
@@ -57,9 +58,9 @@ namespace HwBuddy
             // 
             // dungeonButton
             // 
-            this.dungeonButton.Location = new System.Drawing.Point(115, 27);
+            this.dungeonButton.Location = new System.Drawing.Point(76, 27);
             this.dungeonButton.Name = "dungeonButton";
-            this.dungeonButton.Size = new System.Drawing.Size(97, 23);
+            this.dungeonButton.Size = new System.Drawing.Size(83, 23);
             this.dungeonButton.TabIndex = 2;
             this.dungeonButton.Text = "Подземелье";
             this.dungeonButton.UseVisualStyleBackColor = true;
@@ -77,9 +78,9 @@ namespace HwBuddy
             // 
             // raidButton
             // 
-            this.raidButton.Location = new System.Drawing.Point(218, 27);
+            this.raidButton.Location = new System.Drawing.Point(268, 27);
             this.raidButton.Name = "raidButton";
-            this.raidButton.Size = new System.Drawing.Size(97, 23);
+            this.raidButton.Size = new System.Drawing.Size(61, 23);
             this.raidButton.TabIndex = 5;
             this.raidButton.Text = "Рейдить";
             this.raidButton.UseVisualStyleBackColor = true;
@@ -108,11 +109,22 @@ namespace HwBuddy
             this.linkLabel2.Text = "Инструкция";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
+            // ToeButton
+            // 
+            this.ToeButton.Location = new System.Drawing.Point(165, 27);
+            this.ToeButton.Name = "ToeButton";
+            this.ToeButton.Size = new System.Drawing.Size(97, 23);
+            this.ToeButton.TabIndex = 8;
+            this.ToeButton.Text = "Турнир стихий";
+            this.ToeButton.UseVisualStyleBackColor = true;
+            this.ToeButton.Click += new System.EventHandler(this.ToeButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 60);
+            this.Controls.Add(this.ToeButton);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.raidButton);
@@ -137,6 +149,7 @@ namespace HwBuddy
         private System.Windows.Forms.Button raidButton;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Button ToeButton;
     }
 }
 

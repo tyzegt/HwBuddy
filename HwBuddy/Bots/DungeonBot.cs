@@ -10,14 +10,8 @@ namespace HwBuddy.Bots
 {
     public class DungeonBot : BaseBot
     {
-        List<AbstractStep> steps = StepsFactory.GetDungeonSteps();
-
-        public override void Step()
+        public DungeonBot() : base(StepsFactory.GetDungeonSteps())
         {
-            foreach (var step in steps)
-            {
-                if(step.IsFound()) ImageService.DoMouseClick();
-            }
         }
     }
 }

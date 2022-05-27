@@ -56,5 +56,12 @@ namespace HwBuddy.Common
         public static Image<Bgr, byte> TOWER_SKULLS_ENDED = new Image<Bgr, byte>("Images/tower-skulls-ended.png");
         public static Image<Bgr, byte> TOWER_BAD_POWERUP = new Image<Bgr, byte>("Images/tower-bad-powerup.png");
         public static Image<Bgr, byte> SKULLS_OK_BUTTON = new Image<Bgr, byte>("Images/skulls-ok-button.png");
+
+        public static Image<Bgr, byte> TOE_RAID = new Image<Bgr, byte>("Images/toe-raid.png");
+        public static Image<Bgr, byte> TOE_CLOSE = new Image<Bgr, byte>("Images/toe-close.png");
+        public static Image<Bgr, byte> TOE_CHEST = new Image<Bgr, byte>("Images/toe-chest.png");
+        public static Image<Bgr, byte> TOE_COLLECT = new Image<Bgr, byte>("Images/toe-collect.png");
+        public static Image<Bgr, byte> TOE_COLLECT_2 = new Image<Bgr, byte>("Images/toe-collect-2.png");
+        public static Image<Bgr, byte> TOE_COLLECT_ALL = new Image<Bgr, byte>("Images/toe-collect-all.png");
     }
 }

@@ -1,4 +1,5 @@
-﻿using HwBuddy.Common;
+﻿using HwBuddy.Actions;
+using HwBuddy.Common;
 using HwBuddy.Core;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,10 @@ namespace HwBuddy.Bots
 {
     public class TowerBot : BaseBot
     {
+        public TowerBot() : base(null)
+        {
+        }
+
         public override void Step()
         {
             Stopwatch sw = new Stopwatch();

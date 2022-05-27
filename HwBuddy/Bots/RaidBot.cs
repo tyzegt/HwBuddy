@@ -1,4 +1,5 @@
-﻿using HwBuddy.Common;
+﻿using HwBuddy.Actions;
+using HwBuddy.Common;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,6 +12,10 @@ namespace HwBuddy.Bots
     {
         Point raid;
         Point take;
+
+        public RaidBot() : base(null)
+        {
+        }
 
         public override void Reset()
         {

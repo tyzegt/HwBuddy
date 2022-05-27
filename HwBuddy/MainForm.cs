@@ -25,10 +25,11 @@ namespace HwBuddy
 
         const int ESC_HOTKEY_ID = 1;
 
-        BaseBot currentBot;
+        BaseBot currentBot; // todo: Create bot factory
         BaseBot dunBot;
         BaseBot towerBot;
         BaseBot raidBot;
+        BaseBot tournamentBot;
 
         public static Point Position;
         //public static bool CollectPowerups;
@@ -49,6 +50,7 @@ namespace HwBuddy
             dunBot = new DungeonBot();
             towerBot = new TowerBot();
             raidBot = new RaidBot();
+            tournamentBot = new TournamentOfElementsBot();
         }
 
         protected override void WndProc(ref Message m)
@@ -88,6 +90,12 @@ namespace HwBuddy
             timer1.Enabled = true;
         }
 
+        private void ToeButton_Click(object sender, EventArgs e)
+        {
+            currentBot = tournamentBot;
+            timer1.Enabled = true;
+        }
+
         #endregion
 
         #region FormControls
@@ -108,5 +116,7 @@ namespace HwBuddy
         }
 
         #endregion
+
+
     }
 }
