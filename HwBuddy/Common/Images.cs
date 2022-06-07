@@ -63,5 +63,17 @@ namespace HwBuddy.Common
         public static Image<Bgr, byte> TOE_COLLECT = new Image<Bgr, byte>("Images/toe-collect.png");
         public static Image<Bgr, byte> TOE_COLLECT_2 = new Image<Bgr, byte>("Images/toe-collect-2.png");
         public static Image<Bgr, byte> TOE_COLLECT_ALL = new Image<Bgr, byte>("Images/toe-collect-all.png");
+
+        public static Image<Bgr, byte> CAMPAIGN_MISSION = new Image<Bgr, byte>("Images/campaign-mission.png");
+        public static Image<Bgr, byte> CAMPAIGN_ATTACK = new Image<Bgr, byte>("Images/campaign-attack.png");
+        public static Image<Bgr, byte> CAMPAIGN_VICTORY = new Image<Bgr, byte>("Images/campaign-victory.png");
+        public static Image<Bgr, byte> CAMPAIGN_VALKIRY = new Image<Bgr, byte>("Images/campaign-valkiry.png");
+
+        public static Image<Bgr, byte> EVENTS_ACTIVE_TAB = new Image<Bgr, byte>("Images/events-active-tab.png");
+        public static Image<Bgr, byte> EVENTS_BUTTON = new Image<Bgr, byte>("Images/events-button.png");
+        public static Image<Bgr, byte> EVENTS_COMPLETE_BUTTON = new Image<Bgr, byte>("Images/events-complete-button.png");
+        public static Image<Bgr, byte> EVENTS_DAILY_REWARD = new Image<Bgr, byte>("Images/events-daily-reward.png");
+        public static Image<Bgr, byte> EVENTS_RED_DOT = new Image<Bgr, byte>("Images/events-red-dot.png");
+        public static Image<Bgr, byte> EVENTS_TAKE_DAILY_BUTTON = new Image<Bgr, byte>("Images/events-take-daily-button.png");
     }
 }

@@ -40,6 +40,8 @@ namespace HwBuddy
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
+            //DebugForm debugForm = new DebugForm();
+            //debugForm.Show();
         }
 
         protected override void WndProc(ref Message m)
@@ -62,25 +64,42 @@ namespace HwBuddy
         private void towerButton_Click(object sender, EventArgs e)
         {
             currentBot = BotFactory.GetTowerBot();
-            timer1.Enabled = true;
+            StartBot();
         }
 
         private void dungeonButton_Click(object sender, EventArgs e)
         {
             currentBot = BotFactory.GetDungeonBot();
-            timer1.Enabled = true;
+            StartBot();
         }
 
         private void raidButton_Click(object sender, EventArgs e)
         {
             currentBot = BotFactory.GetRaidBot();
             currentBot.Reset();
-            timer1.Enabled = true;
+            StartBot();
         }
 
         private void ToeButton_Click(object sender, EventArgs e)
         {
             currentBot = BotFactory.GetToeBot();
+            StartBot();
+        }
+        private void campaignButton_Click(object sender, EventArgs e)
+        {
+            currentBot = BotFactory.GetCampaignBot();
+            StartBot();
+        }
+
+        private void eventsButton_Click(object sender, EventArgs e)
+        {
+            currentBot = BotFactory.GetEventsBot();
+            StartBot(1000);
+        }
+
+        void StartBot(int delay = 400)
+        {
+            timer1.Interval = delay;
             timer1.Enabled = true;
         }
 
@@ -95,13 +114,15 @@ namespace HwBuddy
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo("https://hw-buddy.ru") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("https://vk.com/hwbuddy") { UseShellExecute = true });
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://hw-buddy.ru") { UseShellExecute = true });
         }
+
+
 
         #endregion
 

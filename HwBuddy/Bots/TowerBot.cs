@@ -11,6 +11,20 @@ namespace HwBuddy.Bots
 {
     public class TowerBot : BaseBot
     {
+        int ToggleButtonc = 0;
+        int CanAttackc = 0;
+        int NextFloorc = 0;
+        int Shrinec = 0;
+        int Chestc = 0;
+        int CanRaidc = 0;
+        int Victoryc = 0;
+        int Powerupsc = 0;
+        int OpenChestc = 0;
+        int MoveOnc = 0;
+        int Attackc = 0;
+        int CanAttackManuallyc = 0;
+        int OkButtonc = 0;
+
         public TowerBot() : base(null)
         {
         }
@@ -22,77 +36,80 @@ namespace HwBuddy.Bots
             if (ToggleButton())
             {
                 ImageService.DoMouseClick();
+                ToggleButtonc++;
                 return;
             }
             if (CanAttack())
             {
                 ImageService.DoMouseClick();
-                return;
-            }
-            if (NextFloor())
-            {
-                ImageService.DoMouseClick();
-                return;
-            }
-            if (Shrine())
-            {
-                ImageService.DoMouseClick();
-                return;
-            }
-            if (Chest())
-            {
-                ImageService.DoMouseClick();
-                return;
-            }
-            if (CanRaid())
-            {
-                ImageService.DoMouseClick();
-                return;
-            }
-            if (Victory())
-            {
-                if (OkButton())
-                {
-                    ImageService.DoMouseClick();
-                    return;
-                }
-            }
-            if (CanAttack())
-            {
-                ImageService.DoMouseClick();
-                return;
-            }
-            if (Powerups())
-            {
-                ImageService.DoMouseClick();
-                return;
-            }
-            if (OpenChest())
-            {
-                ImageService.DoMouseClick();
-                return;
-            }
-            if (MoveOn())
-            {
-                ImageService.DoMouseClick();
+                CanAttackc++;
                 return;
             }
             if (Attack())
             {
                 ImageService.DoMouseClick();
+                Attackc++;
+                return;
+            }
+            if (Victory())
+            {
+                Victoryc++;
+                if (OkButton())
+                {
+                    ImageService.DoMouseClick();
+                    OkButtonc++;
+                    return;
+                }
+            }
+            if (NextFloor())
+            {
+                ImageService.DoMouseClick();
+                NextFloorc++;
+                return;
+            }
+            if (Chest())
+            {
+                ImageService.DoMouseClick();
+                Chestc++;
+                return;
+            }
+            if (MoveOn())
+            {
+                ImageService.DoMouseClick();
+                MoveOnc++;
+                return;
+            }
+            if (OpenChest())
+            {
+                ImageService.DoMouseClick();
+                OpenChestc++;
+                return;
+            }
+            if (Shrine())
+            {
+                ImageService.DoMouseClick();
+                Shrinec++;
+                return;
+            }
+            if (Powerups())
+            {
+                ImageService.DoMouseClick();
+                Powerupsc++;
+                return;
+            }
+            if (CanRaid())
+            {
+                ImageService.DoMouseClick();
+                CanRaidc++;
                 return;
             }
             if (CanAttackManually())
             {
                 ImageService.DoMouseClick();
+                CanAttackc++;
                 return;
             }
             sw.Stop();
-        }
-
-        bool TowerHall()
-        {
-            return ImageService.CheckImagePresent(Images.TOWER_HALL);
         }
 
         bool CanAttackManually()
@@ -143,13 +160,6 @@ namespace HwBuddy.Bots
         bool NextFloor()
         {
             return ImageService.CursorToImage(Images.TOWER_NEXT);
-        }
-
-        bool BadPowerup()
-        {
-            if(ImageService.CheckImagePresent(Images.TOWER_BAD_POWERUP))
-                return ImageService.CursorToImage(Images.CLOSE_BUTTON);
-            return false;
         }
 
         bool Powerups()

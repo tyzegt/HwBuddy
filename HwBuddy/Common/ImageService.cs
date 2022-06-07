@@ -20,53 +20,20 @@ namespace HwBuddy.Common
         private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
         private const int MOUSEEVENTF_RIGHTUP = 0x10;
 
-
-
-        //public static void CaptureScreen()
-        //{
-        //    Bitmap bmp = new Bitmap(1050, 660);
-
-        //    using (var gr = Graphics.FromImage(bmp))
-        //        try
-        //        {
-        //            //capture screen
-        //            //gr.CopyFromScreen(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y,
-        //                                //0, 0, Screen.PrimaryScreen.Bounds.Size, CopyPixelOperation.SourceCopy);
-
-        //            gr.CopyFromScreen(
-        //                MainForm.Position.X,
-        //                MainForm.Position.Y,
-        //                0, 0, new Size(500, 330), CopyPixelOperation.SourceCopy);
-
-                    
-
-        //            bmp.Save(Images.SCREEN);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.Message);
-        //        }
-        //}
-
         public static Bitmap CaptureScreen()
         {
-            Bitmap bmp = new Bitmap(1050, 660);
+            return CaptureScreen(1050, 650, MainForm.Position.X, MainForm.Position.Y);            
+        }
+
+        public static Bitmap CaptureScreen(int width, int height, int X, int Y)
+        {
+            Bitmap bmp = new Bitmap(width, height);
 
             using (var gr = Graphics.FromImage(bmp))
                 try
                 {
-                    //capture screen
-                    //gr.CopyFromScreen(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y,
-                    //0, 0, Screen.PrimaryScreen.Bounds.Size, CopyPixelOperation.SourceCopy);
-
-                    gr.CopyFromScreen(
-                        MainForm.Position.X,
-                        MainForm.Position.Y,
-                        0, 0, new Size(1050, 660), CopyPixelOperation.SourceCopy);
-
-
+                    gr.CopyFromScreen(X, Y, 0, 0, new Size(1050, 660), CopyPixelOperation.SourceCopy);
                     return bmp;
-                    //bmp.Save(Images.SCREEN);
                 }
                 catch (Exception ex)
                 {
@@ -87,15 +54,11 @@ namespace HwBuddy.Common
 
         public static bool CheckImagePresent(Image<Bgr, byte> image, double accuracy)
         {
-            //CaptureScreen();
-            //return Recognizer.FindImageCoordinates(image, Images.SCREEN, accuracy) != Point.Empty;
             return Recognizer.FindImageCoordinates(image, CaptureScreen(), accuracy) != Point.Empty;
         }
 
         public static bool CursorToImage(Image<Bgr, byte> image, double accuracy, int offsetX, int offsetY)
         {
-            //CaptureScreen();
-            //var result = Recognizer.FindImageCoordinates(image, Images.SCREEN, accuracy);
             var result = Recognizer.FindImageCoordinates(image, CaptureScreen(), accuracy);
             if (result != Point.Empty)
             {
@@ -107,8 +70,6 @@ namespace HwBuddy.Common
 
         public static Point FindImage(Image<Bgr, byte> image, double accuracy, int offsetX, int offsetY)
         {
-            //CaptureScreen();
-            //var result = Recognizer.FindImageCoordinates(image, Images.SCREEN, accuracy);
             var result = Recognizer.FindImageCoordinates(image, CaptureScreen(), accuracy);
             if (result != Point.Empty)
             {

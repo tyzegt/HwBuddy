@@ -39,6 +39,8 @@ namespace HwBuddy
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.ToeButton = new System.Windows.Forms.Button();
+            this.campaignButton = new System.Windows.Forms.Button();
+            this.eventsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer1
@@ -78,7 +80,7 @@ namespace HwBuddy
             // 
             // raidButton
             // 
-            this.raidButton.Location = new System.Drawing.Point(268, 27);
+            this.raidButton.Location = new System.Drawing.Point(348, 27);
             this.raidButton.Name = "raidButton";
             this.raidButton.Size = new System.Drawing.Size(61, 23);
             this.raidButton.TabIndex = 5;
@@ -89,12 +91,12 @@ namespace HwBuddy
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(777, 31);
+            this.linkLabel1.Location = new System.Drawing.Point(814, 35);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(237, 15);
+            this.linkLabel1.Size = new System.Drawing.Size(200, 15);
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Следи за обновлениями на hwbuddy.com";
+            this.linkLabel1.Text = "Обновления тут - vk.com/hwbuddy";
             this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
@@ -119,11 +121,33 @@ namespace HwBuddy
             this.ToeButton.UseVisualStyleBackColor = true;
             this.ToeButton.Click += new System.EventHandler(this.ToeButton_Click);
             // 
+            // campaignButton
+            // 
+            this.campaignButton.Location = new System.Drawing.Point(268, 27);
+            this.campaignButton.Name = "campaignButton";
+            this.campaignButton.Size = new System.Drawing.Size(74, 23);
+            this.campaignButton.TabIndex = 9;
+            this.campaignButton.Text = "Кампания";
+            this.campaignButton.UseVisualStyleBackColor = true;
+            this.campaignButton.Click += new System.EventHandler(this.campaignButton_Click);
+            // 
+            // eventsButton
+            // 
+            this.eventsButton.Location = new System.Drawing.Point(415, 27);
+            this.eventsButton.Name = "eventsButton";
+            this.eventsButton.Size = new System.Drawing.Size(66, 23);
+            this.eventsButton.TabIndex = 10;
+            this.eventsButton.Text = "События";
+            this.eventsButton.UseVisualStyleBackColor = true;
+            this.eventsButton.Click += new System.EventHandler(this.eventsButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 60);
+            this.Controls.Add(this.eventsButton);
+            this.Controls.Add(this.campaignButton);
             this.Controls.Add(this.ToeButton);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
@@ -133,7 +157,7 @@ namespace HwBuddy
             this.Controls.Add(this.towerButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "HW Buddy";
+            this.Text = "HW Buddy v1.0.0.1";
             this.TopMost = true;
             this.Move += new System.EventHandler(this.MainForm_Move);
             this.ResumeLayout(false);
@@ -150,6 +174,8 @@ namespace HwBuddy
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Button ToeButton;
+        private System.Windows.Forms.Button campaignButton;
+        private System.Windows.Forms.Button eventsButton;
     }
 }
 

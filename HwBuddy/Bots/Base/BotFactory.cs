@@ -10,6 +10,8 @@ namespace HwBuddy.Bots.Base
         static BaseBot towerBot;
         static BaseBot raidBot;
         static BaseBot tournamentBot;
+        static BaseBot campaignBot;
+        static BaseBot eventsBot;
 
         public static BaseBot GetDungeonBot()
         {
@@ -30,6 +32,18 @@ namespace HwBuddy.Bots.Base
         {
             if (tournamentBot == null) tournamentBot = new TournamentOfElementsBot();
             return tournamentBot;
+        }
+
+        public static BaseBot GetCampaignBot()
+        {
+            if (campaignBot == null) campaignBot = new CampaignBot();
+            return campaignBot;            
+        }
+
+        internal static BaseBot GetEventsBot()
+        {
+            if (eventsBot == null) eventsBot = new EventsBot();
+            return eventsBot;
         }
     }
 }
