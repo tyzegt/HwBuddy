@@ -3,6 +3,7 @@ using HwBuddy.Actions.Dungeon;
 using HwBuddy.Actions.Events;
 using HwBuddy.Actions.Shared;
 using HwBuddy.Actions.TournamentOfElements;
+using HwBuddy.Common;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +16,8 @@ namespace HwBuddy.Actions
         static List<AbstractStep> toeSteps = null;
         static List<AbstractStep> campaignSteps = null;
         static List<AbstractStep> eventsSteps = null;
+        static List<AbstractStep> expeditionsSteps = null;
+        static List<AbstractStep> outlandSteps = null;
 
 
         public static List<AbstractStep> GetDungeonSteps()
@@ -76,6 +79,35 @@ namespace HwBuddy.Actions
                 eventsSteps.Add(new EventRedDotStep());
             }
             return eventsSteps;
+        }
+
+        public static List<AbstractStep> GetExpeditionsSteps()
+        {
+            if(expeditionsSteps == null)
+            {
+                expeditionsSteps = new List<AbstractStep>();
+                expeditionsSteps.Add(new Step(Images.EXPEDITIONS_RED_DOT));
+                expeditionsSteps.Add(new Step(Images.EXPEDITIONS_AUTO));
+                expeditionsSteps.Add(new Step(Images.EXPEDITIONS_COLLECT));
+                expeditionsSteps.Add(new Step(Images.EXPEDITIONS_START));
+                expeditionsSteps.Add(new Step(Images.EXPEDITIONS_START_2));
+                expeditionsSteps.Add(new Step(Images.EXPEDITIONS_CLOSE));
+            }
+            return expeditionsSteps;
+        }
+
+        public static List<AbstractStep> GetOutlandSteps()
+        {
+            if (outlandSteps == null)
+            {
+                outlandSteps = new List<AbstractStep>();
+                outlandSteps.Add(new Step(Images.OUTLAND_REWARD));
+                outlandSteps.Add(new Step(Images.OUTLAND_OPEN_CHEST, 0.93f));
+                outlandSteps.Add(new Step(Images.OUTLAND_OPEN_CHEST_2, 0.93f));
+                outlandSteps.Add(new Step(Images.OUTLAND_CLOSE));
+                outlandSteps.Add(new Step(Images.OUTLAND_BOSS_DOT, 0.95f, -20, 30));
+            }
+            return outlandSteps;
         }
     }
 }

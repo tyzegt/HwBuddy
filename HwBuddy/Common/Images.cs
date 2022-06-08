@@ -75,5 +75,18 @@ namespace HwBuddy.Common
         public static Image<Bgr, byte> EVENTS_DAILY_REWARD = new Image<Bgr, byte>("Images/events-daily-reward.png");
         public static Image<Bgr, byte> EVENTS_RED_DOT = new Image<Bgr, byte>("Images/events-red-dot.png");
         public static Image<Bgr, byte> EVENTS_TAKE_DAILY_BUTTON = new Image<Bgr, byte>("Images/events-take-daily-button.png");
+
+        public static Image<Bgr, byte> EXPEDITIONS_AUTO = new Image<Bgr, byte>("Images/expeditions-auto.png");
+        public static Image<Bgr, byte> EXPEDITIONS_COLLECT = new Image<Bgr, byte>("Images/expeditions-collect.png");
+        public static Image<Bgr, byte> EXPEDITIONS_RED_DOT = new Image<Bgr, byte>("Images/expeditions-red-dot.png");
+        public static Image<Bgr, byte> EXPEDITIONS_START = new Image<Bgr, byte>("Images/expeditions-start.png");
+        public static Image<Bgr, byte> EXPEDITIONS_START_2 = new Image<Bgr, byte>("Images/expeditions-start-2.png");
+        public static Image<Bgr, byte> EXPEDITIONS_CLOSE = new Image<Bgr, byte>("Images/expeditions-close.png");
+
+        public static Image<Bgr, byte> OUTLAND_BOSS_DOT = new Image<Bgr, byte>("Images/zapred-boss-dot.png");
+        public static Image<Bgr, byte> OUTLAND_CLOSE = new Image<Bgr, byte>("Images/zapred-close.png");
+        public static Image<Bgr, byte> OUTLAND_OPEN_CHEST = new Image<Bgr, byte>("Images/zapred-open-chest.png");
+        public static Image<Bgr, byte> OUTLAND_OPEN_CHEST_2 = new Image<Bgr, byte>("Images/zapred-open-chest-2.png");
+        public static Image<Bgr, byte> OUTLAND_REWARD = new Image<Bgr, byte>("Images/zapred-reward.png");
     }
 }

@@ -41,6 +41,8 @@ namespace HwBuddy
             this.ToeButton = new System.Windows.Forms.Button();
             this.campaignButton = new System.Windows.Forms.Button();
             this.eventsButton = new System.Windows.Forms.Button();
+            this.expeditionsButton = new System.Windows.Forms.Button();
+            this.zapredButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer1
@@ -141,11 +143,33 @@ namespace HwBuddy
             this.eventsButton.UseVisualStyleBackColor = true;
             this.eventsButton.Click += new System.EventHandler(this.eventsButton_Click);
             // 
+            // expeditionsButton
+            // 
+            this.expeditionsButton.Location = new System.Drawing.Point(487, 27);
+            this.expeditionsButton.Name = "expeditionsButton";
+            this.expeditionsButton.Size = new System.Drawing.Size(83, 23);
+            this.expeditionsButton.TabIndex = 11;
+            this.expeditionsButton.Text = "Экспедиции";
+            this.expeditionsButton.UseVisualStyleBackColor = true;
+            this.expeditionsButton.Click += new System.EventHandler(this.expeditionsButton_Click);
+            // 
+            // zapredButton
+            // 
+            this.zapredButton.Location = new System.Drawing.Point(576, 27);
+            this.zapredButton.Name = "zapredButton";
+            this.zapredButton.Size = new System.Drawing.Size(80, 23);
+            this.zapredButton.TabIndex = 12;
+            this.zapredButton.Text = "Запределье";
+            this.zapredButton.UseVisualStyleBackColor = true;
+            this.zapredButton.Click += new System.EventHandler(this.zapredButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 60);
+            this.Controls.Add(this.zapredButton);
+            this.Controls.Add(this.expeditionsButton);
             this.Controls.Add(this.eventsButton);
             this.Controls.Add(this.campaignButton);
             this.Controls.Add(this.ToeButton);
@@ -176,6 +200,8 @@ namespace HwBuddy
         private System.Windows.Forms.Button ToeButton;
         private System.Windows.Forms.Button campaignButton;
         private System.Windows.Forms.Button eventsButton;
+        private System.Windows.Forms.Button expeditionsButton;
+        private System.Windows.Forms.Button zapredButton;
     }
 }
 

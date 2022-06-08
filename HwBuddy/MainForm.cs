@@ -97,11 +97,23 @@ namespace HwBuddy
             StartBot(1000);
         }
 
+        private void expeditionsButton_Click(object sender, EventArgs e)
+        {
+            currentBot = BotFactory.GetExpeditionsBot();
+            StartBot();
+        }
+        private void zapredButton_Click(object sender, EventArgs e)
+        {
+            currentBot = BotFactory.GetOutlandBot();
+            StartBot();
+        }
+
         void StartBot(int delay = 400)
         {
             timer1.Interval = delay;
             timer1.Enabled = true;
         }
+
 
         #endregion
 
@@ -124,8 +136,9 @@ namespace HwBuddy
 
 
 
-        #endregion
 
+
+        #endregion
 
     }
 }

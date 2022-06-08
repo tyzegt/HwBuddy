@@ -12,6 +12,8 @@ namespace HwBuddy.Bots.Base
         static BaseBot tournamentBot;
         static BaseBot campaignBot;
         static BaseBot eventsBot;
+        static BaseBot expeditionsBot;
+        static BaseBot outlandBot;
 
         public static BaseBot GetDungeonBot()
         {
@@ -40,10 +42,20 @@ namespace HwBuddy.Bots.Base
             return campaignBot;            
         }
 
-        internal static BaseBot GetEventsBot()
+        public static BaseBot GetEventsBot()
         {
             if (eventsBot == null) eventsBot = new EventsBot();
             return eventsBot;
+        }
+        public static BaseBot GetExpeditionsBot()
+        {
+            if (expeditionsBot == null) expeditionsBot = new ExpeditionsBot();
+            return expeditionsBot;
+        }
+        public static BaseBot GetOutlandBot()
+        {
+            if (outlandBot == null) outlandBot = new ZapredBot();
+            return outlandBot;
         }
     }
 }
