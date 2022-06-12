@@ -18,6 +18,8 @@ namespace HwBuddy.Actions
         static List<AbstractStep> eventsSteps = null;
         static List<AbstractStep> expeditionsSteps = null;
         static List<AbstractStep> outlandSteps = null;
+        static List<AbstractStep> questsSteps = null;
+        static List<AbstractStep> postSteps = null;
 
 
         public static List<AbstractStep> GetDungeonSteps()
@@ -108,6 +110,31 @@ namespace HwBuddy.Actions
                 outlandSteps.Add(new Step(Images.OUTLAND_BOSS_DOT, 0.95f, -20, 30));
             }
             return outlandSteps;
+        }
+
+        public static List<AbstractStep> GetQuestsSteps()
+        {
+            if (questsSteps == null)
+            {
+                questsSteps = new List<AbstractStep>();
+                questsSteps.Add(new Step(Images.QUESTS_COMPLETE));
+                questsSteps.Add(new Step(Images.QUESTS_RED_DOT));
+            }
+            return questsSteps;
+        }
+
+        public static List<AbstractStep> GetPostSteps()
+        {
+            if (postSteps == null)
+            {
+                postSteps = new List<AbstractStep>();
+                postSteps.Add(new Step(Images.POST_COLLECT_ALL));
+                postSteps.Add(new Step(Images.POST_SHOW_ALL));
+                postSteps.Add(new Step(Images.POST_TAKE_ALL));
+                postSteps.Add(new Step(Images.POST_READ));
+                postSteps.Add(new Step(Images.POST_TAKE));
+            }
+            return postSteps;
         }
     }
 }

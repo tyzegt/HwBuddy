@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HwBuddy.Actions;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,6 +15,8 @@ namespace HwBuddy.Bots.Base
         static BaseBot eventsBot;
         static BaseBot expeditionsBot;
         static BaseBot outlandBot;
+        static BaseBot questsBot;
+        static BaseBot postBot;
 
         public static BaseBot GetDungeonBot()
         {
@@ -56,6 +59,18 @@ namespace HwBuddy.Bots.Base
         {
             if (outlandBot == null) outlandBot = new ZapredBot();
             return outlandBot;
+        }
+
+        public static BaseBot GetQuestsBot()
+        {
+            if (questsBot == null) questsBot = new BaseBot(StepsFactory.GetQuestsSteps());
+            return questsBot;
+        }
+
+        public static BaseBot GetPostBot()
+        {
+            if (postBot == null) postBot = new BaseBot(StepsFactory.GetPostSteps());
+            return postBot;
         }
     }
 }

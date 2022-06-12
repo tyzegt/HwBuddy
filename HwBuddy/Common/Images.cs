@@ -88,5 +88,14 @@ namespace HwBuddy.Common
         public static Image<Bgr, byte> OUTLAND_OPEN_CHEST = new Image<Bgr, byte>("Images/zapred-open-chest.png");
         public static Image<Bgr, byte> OUTLAND_OPEN_CHEST_2 = new Image<Bgr, byte>("Images/zapred-open-chest-2.png");
         public static Image<Bgr, byte> OUTLAND_REWARD = new Image<Bgr, byte>("Images/zapred-reward.png");
+
+        public static Image<Bgr, byte> QUESTS_RED_DOT = new Image<Bgr, byte>("Images/quests-red-dot.png");
+        public static Image<Bgr, byte> QUESTS_COMPLETE = new Image<Bgr, byte>("Images/quests-complete.png");
+
+        public static Image<Bgr, byte> POST_COLLECT_ALL = new Image<Bgr, byte>("Images/post-collect-all.png");
+        public static Image<Bgr, byte> POST_READ = new Image<Bgr, byte>("Images/post-read.png");
+        public static Image<Bgr, byte> POST_SHOW_ALL = new Image<Bgr, byte>("Images/post-show-all.png");
+        public static Image<Bgr, byte> POST_TAKE = new Image<Bgr, byte>("Images/post-take.png");
+        public static Image<Bgr, byte> POST_TAKE_ALL = new Image<Bgr, byte>("Images/post-take-all.png");
     }
 }

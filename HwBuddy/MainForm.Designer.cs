@@ -43,6 +43,8 @@ namespace HwBuddy
             this.eventsButton = new System.Windows.Forms.Button();
             this.expeditionsButton = new System.Windows.Forms.Button();
             this.zapredButton = new System.Windows.Forms.Button();
+            this.questsButton = new System.Windows.Forms.Button();
+            this.postButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer1
@@ -163,11 +165,33 @@ namespace HwBuddy
             this.zapredButton.UseVisualStyleBackColor = true;
             this.zapredButton.Click += new System.EventHandler(this.zapredButton_Click);
             // 
+            // questsButton
+            // 
+            this.questsButton.Location = new System.Drawing.Point(662, 27);
+            this.questsButton.Name = "questsButton";
+            this.questsButton.Size = new System.Drawing.Size(62, 23);
+            this.questsButton.TabIndex = 13;
+            this.questsButton.Text = "Задания";
+            this.questsButton.UseVisualStyleBackColor = true;
+            this.questsButton.Click += new System.EventHandler(this.questsButton_Click);
+            // 
+            // postButton
+            // 
+            this.postButton.Location = new System.Drawing.Point(12, 56);
+            this.postButton.Name = "postButton";
+            this.postButton.Size = new System.Drawing.Size(62, 23);
+            this.postButton.TabIndex = 14;
+            this.postButton.Text = "Почта";
+            this.postButton.UseVisualStyleBackColor = true;
+            this.postButton.Click += new System.EventHandler(this.postButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 60);
+            this.ClientSize = new System.Drawing.Size(1026, 86);
+            this.Controls.Add(this.postButton);
+            this.Controls.Add(this.questsButton);
             this.Controls.Add(this.zapredButton);
             this.Controls.Add(this.expeditionsButton);
             this.Controls.Add(this.eventsButton);
@@ -181,7 +205,7 @@ namespace HwBuddy
             this.Controls.Add(this.towerButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "HW Buddy v1.0.0.1";
+            this.Text = "HW Buddy v1.0.3.0";
             this.TopMost = true;
             this.Move += new System.EventHandler(this.MainForm_Move);
             this.ResumeLayout(false);
@@ -202,6 +226,8 @@ namespace HwBuddy
         private System.Windows.Forms.Button eventsButton;
         private System.Windows.Forms.Button expeditionsButton;
         private System.Windows.Forms.Button zapredButton;
+        private System.Windows.Forms.Button questsButton;
+        private System.Windows.Forms.Button postButton;
     }
 }
 

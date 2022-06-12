@@ -108,6 +108,17 @@ namespace HwBuddy
             StartBot();
         }
 
+        private void questsButton_Click(object sender, EventArgs e)
+        {
+            currentBot = BotFactory.GetQuestsBot();
+            StartBot();
+        }
+        private void postButton_Click(object sender, EventArgs e)
+        {
+            currentBot = BotFactory.GetPostBot();
+            StartBot();
+        }
+
         void StartBot(int delay = 400)
         {
             timer1.Interval = delay;
@@ -133,6 +144,7 @@ namespace HwBuddy
         {
             Process.Start(new ProcessStartInfo("https://hw-buddy.ru") { UseShellExecute = true });
         }
+
 
 
 
