@@ -83,6 +83,7 @@ namespace HwBuddy.Actions
             return eventsSteps;
         }
 
+        // New and simpler bot creation, TODO: consider refactoring previous step sets with new approach
         public static List<AbstractStep> GetExpeditionsSteps()
         {
             if(expeditionsSteps == null)
